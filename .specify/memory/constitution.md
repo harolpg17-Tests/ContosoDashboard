@@ -1,50 +1,78 @@
-# [PROJECT_NAME] Constitution
+<!--
+Sync Impact Report
+Version change: none → 1.0.0
+List of modified principles: All principles added (Security-First, User-Centric Design, Data Integrity and Performance, Testability and Quality, Simplicity and Training Focus)
+Added sections: Core Principles, Additional Constraints, Development Workflow, Governance
+Removed sections: None
+Templates requiring updates: None (no constitution references found in plan-template.md, spec-template.md, tasks-template.md, or commands)
+Follow-up TODOs: None
+-->
+
+# ContosoDashboard Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Security-First
+Authentication and authorization are paramount; implement defense in depth with role-based access control, IDOR protection, secure coding practices, and proper input validation. Use mock authentication for training but follow production-ready patterns with claims-based identity and hierarchical permissions.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. User-Centric Design
+All features prioritize user experience and accessibility; dashboard, profiles, notifications, and UI components tailored to user roles and needs. Ensure responsive design, clear navigation, and intuitive workflows.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Data Integrity and Performance
+Use Entity Framework Core with proper relationships, indexes, and migrations for data consistency and referential integrity. Optimize database queries, implement caching where appropriate, and ensure scalable performance for concurrent users.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Testability and Quality
+Enable nullable references, async/await patterns, and clean architecture for maintainable, testable code. Follow separation of concerns with service layers, dependency injection, and comprehensive error handling.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity and Training Focus
+Maintain offline-first design with no external dependencies for training purposes. Use abstractions and interfaces to enable seamless migration to cloud services (Azure SQL, Blob Storage, Entra ID) while keeping the codebase simple and educational.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Technology Stack: .NET 10 with Blazor Server, SQL Server (LocalDB for training), Bootstrap 5, ASP.NET Core Identity patterns.  
+Compliance: Training application only - not for production use. Known limitations include mock authentication and simplified security.  
+Performance: Target <2s page load times, support 100+ concurrent users in training scenarios.  
+Deployment: Local development only; production would require Azure App Service, SQL Database, and proper authentication.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Feature development follows Spec-Driven Development using GitHub Spec Kit: create specs, plans, tasks, and checklists. Use EF Core migrations for database schema changes. Implement code reviews, testing, and validation before merging. Commit after each task completion.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all other practices; all decisions must align with core principles. Amendments require documentation, team consensus, and migration plan. Complexity must be justified with simpler alternatives considered. Use this constitution for runtime development guidance.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-13 | **Last Amended**: 2026-04-13
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+## Core Principles
+
+### I. Security-First
+Authentication and authorization are paramount; implement defense in depth with role-based access control, IDOR protection, secure coding practices, and proper input validation. Use mock authentication for training but follow production-ready patterns with claims-based identity and hierarchical permissions.
+
+### II. User-Centric Design
+All features prioritize user experience and accessibility; dashboard, profiles, notifications, and UI components tailored to user roles and needs. Ensure responsive design, clear navigation, and intuitive workflows.
+
+### III. Data Integrity and Performance
+Use Entity Framework Core with proper relationships, indexes, and migrations for data consistency and referential integrity. Optimize database queries, implement caching where appropriate, and ensure scalable performance for concurrent users.
+
+### IV. Testability and Quality
+Enable nullable references, async/await patterns, and clean architecture for maintainable, testable code. Follow separation of concerns with service layers, dependency injection, and comprehensive error handling.
+
+### V. Simplicity and Training Focus
+Maintain offline-first design with no external dependencies for training purposes. Use abstractions and interfaces to enable seamless migration to cloud services (Azure SQL, Blob Storage, Entra ID) while keeping the codebase simple and educational.
+
+## Additional Constraints
+
+Technology Stack: .NET 10 with Blazor Server, SQL Server (LocalDB for training), Bootstrap 5, ASP.NET Core Identity patterns.  
+Compliance: Training application only - not for production use. Known limitations include mock authentication and simplified security.  
+Performance: Target <2s page load times, support 100+ concurrent users in training scenarios.  
+Deployment: Local development only; production would require Azure App Service, SQL Database, and proper authentication.
+
+## Development Workflow
+
+Feature development follows Spec-Driven Development using GitHub Spec Kit: create specs, plans, tasks, and checklists. Use EF Core migrations for database schema changes. Implement code reviews, testing, and validation before merging. Commit after each task completion.
+
+## Governance
+Constitution supersedes all other practices; all decisions must align with core principles. Amendments require documentation, team consensus, and migration plan. Complexity must be justified with simpler alternatives considered. Use this constitution for runtime development guidance.
+
+**Version**: 1.0.0 | **Ratified**: 2026-04-13 | **Last Amended**: 2026-04-13
